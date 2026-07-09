@@ -6,23 +6,18 @@ interface BracketViewProps {
 }
 
 export function BracketView({ data }: BracketViewProps) {
-  // Map teams by ID for lookup
   const teamMap = new Map(data.teams.map(t => [t.id, t]));
   const predMap = new Map(data.match_predictions.map(p => [p.match_id, p]));
 
-  // Get match by ID
   const getMatch = (id: string) => data.matches.find(m => m.id === id);
   const getPred = (id: string) => predMap.get(id);
 
-  // Build bracket structure for 2026 format
-  // QF matches
   const qfMatches = ["QF_1", "QF_2", "QF_3", "QF_4"].map(id => {
     const match = getMatch(id);
     const pred = getPred(id);
     return { match, pred };
   });
 
-  // SF and Final are TBD - show as placeholders
   const sfMatches = ["SF_1", "SF_2"].map(id => {
     const match = getMatch(id);
     return { match, pred: null };
@@ -33,17 +28,17 @@ export function BracketView({ data }: BracketViewProps) {
   return (
     <div>
       <div className="panel" style={{ marginBottom: 24 }}>
-        <h2>2026 World Cup Knockout Bracket</h2>
+        <h2>2026世界杯淘汰赛对阵图</h2>
         <p style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>
-          8 teams remaining — Quarterfinals in progress. Predictions based on Elo + Poisson + LightGBM + DeepSeek LLM.
+          8支球队进入1/4决赛。预测基于 Elo + 泊松 + LightGBM + DeepSeek 大模型四引擎融合。
         </p>
       </div>
 
       <div className="bracket-container">
         <div className="bracket-rounds">
-          {/* Quarterfinals */}
+          {/* 1/4决赛 */}
           <div className="bracket-round">
-            <h3>Quarterfinals</h3>
+            <h3>1/4 决赛</h3>
             {qfMatches.map(({ match, pred }) => (
               match ? (
                 <BracketMatch
@@ -56,9 +51,9 @@ export function BracketView({ data }: BracketViewProps) {
             ))}
           </div>
 
-          {/* Semifinals */}
+          {/* 半决赛 */}
           <div className="bracket-round" style={{ justifyContent: "center" }}>
-            <h3>Semifinals</h3>
+            <h3>半决赛</h3>
             {sfMatches.map(({ match }) => (
               match ? (
                 <BracketMatch
@@ -71,9 +66,9 @@ export function BracketView({ data }: BracketViewProps) {
             ))}
           </div>
 
-          {/* Final */}
+          {/* 决赛 */}
           <div className="bracket-round" style={{ justifyContent: "center" }}>
-            <h3>Final</h3>
+            <h3>决赛</h3>
             {finalMatch && (
               <BracketMatch
                 match={finalMatch}
@@ -85,18 +80,18 @@ export function BracketView({ data }: BracketViewProps) {
         </div>
       </div>
 
-      {/* Champion Probability Table */}
+      {/* 晋级概率表 */}
       <div className="panel" style={{ marginTop: 24 }}>
-        <h2>Road to the Final — Stage Advancement Probabilities</h2>
+        <h2>各阶段晋级概率</h2>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.85rem" }}>
             <thead>
               <tr style={{ color: "var(--text-muted)", textAlign: "left" }}>
-                <th style={{ padding: 8 }}>Team</th>
-                <th style={{ padding: 8, textAlign: "center" }}>QF</th>
-                <th style={{ padding: 8, textAlign: "center" }}>SF</th>
-                <th style={{ padding: 8, textAlign: "center" }}>Final</th>
-                <th style={{ padding: 8, textAlign: "center" }}>Champion</th>
+                <th style={{ padding: 8 }}>球队</th>
+                <th style={{ padding: 8, textAlign: "center" }}>四强</th>
+                <th style={{ padding: 8, textAlign: "center" }}>半决赛</th>
+                <th style={{ padding: 8, textAlign: "center" }}>决赛</th>
+                <th style={{ padding: 8, textAlign: "center" }}>夺冠</th>
               </tr>
             </thead>
             <tbody>

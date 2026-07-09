@@ -19,10 +19,10 @@ function App() {
       <Header data={data} />
       <nav className="tab-nav">
         {([
-          ["dashboard", "Dashboard"],
-          ["bracket", "Knockout Bracket"],
-          ["groups", "Group Stage"],
-          ["odds", "Champion Odds"],
+          ["dashboard", "仪表盘"],
+          ["bracket", "淘汰赛对阵"],
+          ["groups", "小组赛"],
+          ["odds", "夺冠概率"],
         ] as [Tab, string][]).map(([tab, label]) => (
           <button
             key={tab}
@@ -41,8 +41,8 @@ function App() {
       </main>
       <footer className="footer">
         <p>
-          Powered by Python + LightGBM + DeepSeek API | {data.monte_carlo_iterations.toLocaleString()} Monte Carlo simulations
-          | Generated: {new Date(data.generated_at).toLocaleString()}
+          技术栈：Python + LightGBM + DeepSeek API | {data.monte_carlo_iterations.toLocaleString()} 次蒙特卡洛模拟
+          | 生成时间：{new Date(data.generated_at).toLocaleString()}
         </p>
       </footer>
     </div>

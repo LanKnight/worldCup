@@ -14,7 +14,7 @@ export function Dashboard({ data }: DashboardProps) {
 
       <div className="dashboard-grid">
         <div className="panel">
-          <h2>Championship Contenders</h2>
+          <h2>夺冠热门排名</h2>
           <div className="contender-list">
             {top8.map((tp, i) => (
               <div key={tp.team_id} className="contender-row">
@@ -36,7 +36,7 @@ export function Dashboard({ data }: DashboardProps) {
         </div>
 
         <div className="panel">
-          <h2>Quarterfinal Predictions</h2>
+          <h2>1/4 决赛预测</h2>
           {data.match_predictions.map(pred => {
             const home = data.teams.find(t => t.id === pred.home_team_id);
             const away = data.teams.find(t => t.id === pred.away_team_id);
@@ -51,9 +51,9 @@ export function Dashboard({ data }: DashboardProps) {
                   <span className="team-score">{pred.predicted_away_goals.toFixed(1)}</span>
                 </div>
                 <div className="prob-row">
-                  <span className="prob home">H {(pred.home_win_prob * 100).toFixed(0)}%</span>
-                  <span className="prob draw">D {(pred.draw_prob * 100).toFixed(0)}%</span>
-                  <span className="prob away">A {(pred.away_win_prob * 100).toFixed(0)}%</span>
+                  <span className="prob home">主胜 {(pred.home_win_prob * 100).toFixed(0)}%</span>
+                  <span className="prob draw">平 {(pred.draw_prob * 100).toFixed(0)}%</span>
+                  <span className="prob away">客胜 {(pred.away_win_prob * 100).toFixed(0)}%</span>
                 </div>
               </div>
             );
@@ -63,7 +63,7 @@ export function Dashboard({ data }: DashboardProps) {
 
       {data.llm_narrative && (
         <div className="narrative">
-          <h2>AI-Powered DeepSeek LLM Analysis</h2>
+          <h2>DeepSeek 大模型冠军分析</h2>
           <p>{data.llm_narrative}</p>
         </div>
       )}

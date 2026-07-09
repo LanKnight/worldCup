@@ -19,7 +19,7 @@ export function ChampionOdds({ data }: ChampionOddsProps) {
   return (
     <div className="odds-container">
       <div className="odds-chart">
-        <h2>Champion Probability — Top 10 Teams</h2>
+        <h2>夺冠概率 — Top 10 球队</h2>
         <ResponsiveContainer width="100%" height={400}>
           <BarChart data={chartData} layout="vertical" margin={{ left: 80, right: 30, top: 10, bottom: 10 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
@@ -32,7 +32,7 @@ export function ChampionOdds({ data }: ChampionOddsProps) {
                 borderRadius: 8,
                 color: "var(--text)",
               }}
-              formatter={(value) => [`${value}%`, "Champion Probability"]}
+              formatter={(value) => [`${value}%`, "夺冠概率"]}
             />
             <Bar dataKey="probability" radius={[0, 4, 4, 0]}>
               {chartData.map((_, index) => (
@@ -51,10 +51,10 @@ export function ChampionOdds({ data }: ChampionOddsProps) {
             </div>
             <div className="champion-pct">{(tp.champion_prob * 100).toFixed(1)}%</div>
             <div className="stage-probs">
-              <span>SF <strong>{i < 4 ? ">" : ""}{(tp.semi_final_prob * 100).toFixed(0)}%</strong></span>
-              <span>Final <strong>{(tp.final_prob * 100).toFixed(0)}%</strong></span>
-              <span>QF <strong>{(tp.quarter_final_prob * 100).toFixed(0)}%</strong></span>
-              <span>Goals <strong>{tp.avg_goals_scored?.toFixed(1)}/g</strong></span>
+              <span>四强 <strong>{(tp.quarter_final_prob * 100).toFixed(0)}%</strong></span>
+              <span>决赛 <strong>{(tp.final_prob * 100).toFixed(0)}%</strong></span>
+              <span>半决赛 <strong>{(tp.semi_final_prob * 100).toFixed(0)}%</strong></span>
+              <span>场均进球 <strong>{tp.avg_goals_scored?.toFixed(1)}</strong></span>
             </div>
           </div>
         ))}

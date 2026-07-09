@@ -5,19 +5,16 @@ interface GroupStageGridProps {
 }
 
 export function GroupStageGrid({ data }: GroupStageGridProps) {
-  // Group matches and teams by group
   const groups = new Map<string, {
     teams: Array<{ id: string; name: string; pts: number; gd: number; gs: number; played: number }>;
     matches: typeof data.matches;
   }>();
 
-  // Initialize groups
   const groupLetters = "ABCDEFGHIJKL".split("");
   for (const g of groupLetters) {
     groups.set(g, { teams: [], matches: [] });
   }
 
-  // Group matches
   for (const match of data.matches) {
     if (match.stage === "group" && match.group) {
       const g = groups.get(match.group);
@@ -25,7 +22,6 @@ export function GroupStageGrid({ data }: GroupStageGridProps) {
     }
   }
 
-  // Compute standings for each group
   for (const [_groupName, groupData] of groups) {
     const teamStats = new Map<string, { pts: number; gd: number; gs: number; played: number }>();
 
@@ -52,7 +48,6 @@ export function GroupStageGrid({ data }: GroupStageGridProps) {
       else { hs.pts += 1; as.pts += 1; }
     }
 
-    // Create team list with sort
     groupData.teams = Array.from(teamStats.entries())
       .map(([id, stats]) => ({
         id,
@@ -68,25 +63,24 @@ export function GroupStageGrid({ data }: GroupStageGridProps) {
   return (
     <div>
       <div className="panel" style={{ marginBottom: 24 }}>
-        <h2>Group Stage Results</h2>
+        <h2>小组赛结果</h2>
         <p style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>
-          48 teams, 12 groups. Top 2 from each group + 8 best 3rd-place teams advanced to Round of 32.
-          Green dots indicate teams that advanced.
+          48支球队，12个小组。每组前2名 + 8个成绩最好的小组第3名晋级32强。绿点标记表示出线球队。
         </p>
       </div>
 
       <div className="group-grid">
         {Array.from(groups.entries()).map(([groupName, groupData]) => (
           <div key={groupName} className="group-table">
-            <h3>Group {groupName}</h3>
+            <h3>{groupName} 组</h3>
             <table>
               <thead>
                 <tr>
-                  <th>Team</th>
-                  <th>P</th>
-                  <th>W/D/L</th>
-                  <th>GD</th>
-                  <th>Pts</th>
+                  <th>球队</th>
+                  <th>场</th>
+                  <th>胜/平/负</th>
+                  <th>净胜</th>
+                  <th>积分</th>
                 </tr>
               </thead>
               <tbody>
