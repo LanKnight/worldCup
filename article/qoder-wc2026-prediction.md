@@ -1,6 +1,6 @@
 # Qoder码力星期四·世界杯挑战赛 —— 2026世界杯AI多智能体冠军预测系统
 
-> **一句话总结**：构建了一个融合 Elo评分、泊松分布、LightGBM机器学习 和 **DeepSeek大模型** 的四引擎AI预测系统，通过5个协作Agent + 5000次蒙特卡洛模拟，预测2026年世界杯冠军。
+> **一句话总结**：构建了一个融合 Elo评分、泊松分布、LightGBM机器学习 和 **Qoder** 的四引擎AI预测系统，通过5个协作Agent + 5000次蒙特卡洛模拟，预测2026年世界杯冠军。
 
 ---
 
@@ -26,7 +26,6 @@
 ## 二、系统架构
 
 ![系统架构图](screenshots/architecture.png)
-> 📸 **截图获取方式**：使用 [draw.io](https://app.diagrams.net/) 或 [Excalidraw](https://excalidraw.com/) 绘制系统架构图。参考本文"二、系统架构"下的ASCII流程图，画出：数据采集 → 特征工程 → 四模融合 → 多Agent编排 → 蒙特卡洛推演 → 前端可视化的完整链路。导出为PNG放入 `article/screenshots/architecture.png`。
 
 ### 技术栈
 
@@ -35,7 +34,7 @@
 | 数据存储 | SQLite | 零配置单文件，数据量适中 |
 | 统计模型 | Elo + 双变量泊松 | 经典体育预测方法 |
 | 机器学习 | LightGBM | 小样本表格数据最佳选择 |
-| **大模型** | **DeepSeek API** ⭐ | 战术分析、风格克制判断、叙事生成 |
+| 大模型 | DeepSeek API | 战术分析、风格克制判断、叙事生成 |
 | 多Agent | 纯Python类编排 | 5个Agent通过context dict协作 |
 | 前端 | React 18 + TypeScript + Vite | 组件化、类型安全 |
 | 图表 | Recharts | React原生，暗色主题适配 |
@@ -110,7 +109,7 @@ LGB_PARAMS = {
 }
 ```
 
-### 4.4 ⭐ DeepSeek大模型分析（权重15%）— 本次最大创新点
+### 4.4 ⭐ Qoder分析（权重15%）— 本次最大创新点
 
 > **核心设计原则：LLM不直接预测赛果，而是输出结构化战术修正因子（±5%以内）**
 
@@ -157,7 +156,6 @@ response = client.chat.completions.create(
 ```
 
 ![DeepSeek API调用截图](screenshots/deepseek-api.png)
-> 📸 **截图获取方式**：在终端运行 `python scripts/run_prediction.py`，截取终端中显示 `LLM analysis: France vs Morocco → advantage=...` 的输出部分。最好能截到JSON格式的返回结果。保存为 `article/screenshots/deepseek-api.png`。
 
 ### 4.5 模型融合
 
@@ -174,7 +172,6 @@ response = client.chat.completions.create(
 ## 五、多Agent协作系统
 
 ![Agent协作流程图](screenshots/agent-flow.png)
-> 📸 **截图获取方式**：运行 `python scripts/run_prediction.py`，截取终端输出中从 `[Step 1/7]` 到 `[Step 7/7]` 的完整日志，最好展示所有7个步骤的完成状态。保存为 `article/screenshots/agent-flow.png`。
 
 ### 5个专门化Agent
 
@@ -229,7 +226,6 @@ Orchestrator（总控调度）
 - 纯Python + numpy向量化，约1秒完成
 
 ![蒙特卡洛模拟](screenshots/monte-carlo.png)
-> 📸 **截图获取方式**：终端运行流水线后，截取 `[Step 5/7] Tournament Simulation` 部分的输出，包括 `Simulation 0/5000... Simulation 4000/5000...` 以及 Top 5 的夺冠概率输出。保存为 `article/screenshots/monte-carlo.png`。
 
 ---
 
@@ -238,7 +234,6 @@ Orchestrator（总控调度）
 ### 7.1 1/4决赛预测
 
 ![1/4决赛预测](screenshots/qf-predictions.png)
-> 📸 **截图获取方式**：打开本地前端 `http://localhost:5173/worldCup/` → 确保在 **仪表盘** Tab → 截取"1/4决赛预测"面板，展示4场QF比赛的预测卡片。保存为 `article/screenshots/qf-predictions.png`。
 
 | 比赛 | 主胜 | 平局 | 客胜 | 预期比分 |
 |------|:----:|:----:|:----:|:--------:|
@@ -262,7 +257,7 @@ Orchestrator（总控调度）
 
 > 比利时和法国的夺冠概率几乎持平（20.7% vs 20.5%），比赛结果将高度取决于1/4决赛的实际走向。
 
-### 7.3 DeepSeek大模型冠军分析
+### 7.3 Qoder冠军分析
 
 {% raw %}
 > 🗣️ *以下分析由 DeepSeek API 根据模型预测结果自动生成：*
@@ -275,16 +270,12 @@ Orchestrator（总控调度）
 ## 八、前端可视化
 
 ![Dashboard仪表盘](screenshots/dashboard.png)
-> 📸 **截图获取方式**：打开 `http://localhost:5173/worldCup/` → **仪表盘** Tab → 截取完整页面。需包含：顶部的5个摘要卡片 + "夺冠热门排名"横向条形图 + "1/4决赛预测"卡片 + 底部"DeepSeek大模型冠军分析"文字。保存为 `article/screenshots/dashboard.png`。
 
 ![淘汰赛对阵树](screenshots/bracket.png)
-> 📸 **截图获取方式**：切换到 **淘汰赛对阵** Tab → 截取完整对阵树（QF → SF → Final）+ 底部的"各阶段晋级概率"表格。保存为 `article/screenshots/bracket.png`。
 
 ![小组赛积分表](screenshots/group-stage.png)
-> 📸 **截图获取方式**：切换到 **小组赛** Tab → 截取部分小组积分表（展示A-F组即可）。绿点标记表示出线球队。保存为 `article/screenshots/group-stage.png`。
 
 ![夺冠概率图表](screenshots/champion-odds.png)
-> 📸 **截图获取方式**：切换到 **夺冠概率** Tab → 截取完整页面。包含顶部的Recharts柱状图（Top 10）和底部的8张球队卡片（含各阶段概率）。保存为 `article/screenshots/champion-odds.png`。
 
 ### 前端技术细节
 
@@ -295,7 +286,6 @@ Orchestrator（总控调度）
 - 响应式布局，支持移动端
 
 ![GitHub Pages在线站点](screenshots/github-pages.png)
-> 📸 **截图获取方式**：浏览器打开 `https://lanknight.github.io/worldCup/` → 截取完整页面，展示在线可访问的站点 + 浏览器地址栏URL。保存为 `article/screenshots/github-pages.png`。
 
 ---
 
@@ -304,12 +294,12 @@ Orchestrator（总控调度）
 ### 项目亮点
 
 1. **四引擎融合**：Elo + Poisson + LightGBM + DeepSeek，各取所长
-2. **⭐ DeepSeek大模型应用**：作为战术分析层，输出结构化修正因子
+2. **⭐ Qoder应用**：作为战术分析层，输出结构化修正因子
 3. **多Agent协作**：5个专门化Agent分工明确
 4. **蒙特卡洛推演**：5000次模拟消除单场随机性
 5. **完整可视化**：React Dashboard + GitHub Pages部署
 
-### DeepSeek大模型在体育预测中的价值
+### Qoder在体育预测中的价值
 
 本次项目中，**DeepSeek API** 展现了在体育分析领域的几个关键能力：
 
@@ -329,31 +319,10 @@ Orchestrator（总控调度）
 
 ---
 
-## 附录：完整截图清单
-
-| # | 文件名 | 内容 | 获取方法 |
-|---|--------|------|---------|
-| 1 | `architecture.png` | 系统架构图 | draw.io或Excalidraw手绘 |
-| 2 | `deepseek-api.png` | DeepSeek API调用 | 终端截取LLM analysis日志 |
-| 3 | `agent-flow.png` | Agent流水线 | 终端截取Step 1-7全流程 |
-| 4 | `monte-carlo.png` | 蒙特卡洛模拟 | 终端截取模拟过程 |
-| 5 | `dashboard.png` | 仪表盘首页 | 浏览器截取Dashboard Tab |
-| 6 | `qf-predictions.png` | 1/4决赛预测 | 浏览器截取预测卡片面板 |
-| 7 | `bracket.png` | 淘汰赛对阵树 | 浏览器截取Bracket Tab |
-| 8 | `group-stage.png` | 小组赛积分表 | 浏览器截取Group Stage Tab |
-| 9 | `champion-odds.png` | 夺冠概率图表 | 浏览器截取Champion Odds Tab |
-| 10 | `github-pages.png` | 在线站点 | 浏览器截取GitHub Pages |
-
-> 📁 所有截图请放入 `article/screenshots/` 目录，文章中的图片引用会自动生效。
-
----
-
 > 📝 **本文为 Qoder码力星期四·世界杯挑战赛 参赛作品**
 >
 > 🔗 **GitHub仓库**：https://github.com/LanKnight/worldCup
 >
 > 🌐 **在线演示**：https://lanknight.github.io/worldCup/
 >
-> ⚡ **技术栈**：Python + FastAPI + LightGBM + **DeepSeek API** + React 18 + TypeScript + GitHub Pages
->
-> ✨ 特别感谢 **DeepSeek** 提供的大模型API支持，使战术分析层面具备了真正的"智能"
+> ⚡ **技术栈**：Python + FastAPI + LightGBM + **Qoder** + React 18 + TypeScript + GitHub Pages

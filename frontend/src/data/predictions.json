@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T12:34:10.996132",
+  "generated_at": "2026-07-09T13:54:36.550477",
   "model_version": "1.0.0",
   "monte_carlo_iterations": 5000,
   "teams": [
@@ -1756,23 +1756,23 @@
       "poisson_home_win_prob": 0.0865,
       "lightgbm_home_win_prob": 0.5162,
       "llm_correction": 0.03,
-      "llm_narrative": "France's superior depth and attacking firepower, led by Mbappé, should overwhelm Morocco's organized but less creative setup. Morocco's resilience in previous matches may keep it tight, but France's tactical flexibility and home advantage tilt the balance in their favor.",
+      "llm_narrative": "France enters as clear favorites with a potent attack led by Mbappé, averaging 3.2 goals per game, while Morocco relies on a disciplined defense and quick transitions. The tactical mismatch lies in France's ability to break down deep blocks, but Morocco's resilience in previous matches suggests they can frustrate and counter, though France's overall quality and home advantage tilt the balance.",
       "model_version": "1.0.0"
     },
     {
       "match_id": "QF_2",
       "home_team_id": "ESP",
       "away_team_id": "BEL",
-      "home_win_prob": 0.2512,
-      "draw_prob": 0.6498,
-      "away_win_prob": 0.099,
+      "home_win_prob": 0.2394,
+      "draw_prob": 0.66,
+      "away_win_prob": 0.1006,
       "predicted_home_goals": 1.0,
       "predicted_away_goals": 0.91,
       "elo_home_win_prob": 0.4899,
       "poisson_home_win_prob": 0.0865,
       "lightgbm_home_win_prob": 0.1515,
-      "llm_correction": 0.03,
-      "llm_narrative": "Spain's disciplined possession style should help them dictate tempo and limit Belgium's dangerous transitions, though Belgium's clinical finishing (2.8 goals/game) poses a real threat. Spain's unbeaten run and higher Elo rating give them a slight edge in a tightly contested quarter-final.",
+      "llm_correction": 0.02,
+      "llm_narrative": "Spain's disciplined possession and high press could neutralize Belgium's pace on the break, though Belgium's clinical finishing poses a constant danger. The home crowd and Spain's recent momentum give them a slight tactical edge, but Belgium's firepower keeps the matchup finely balanced.",
       "model_version": "1.0.0"
     },
     {
@@ -1788,7 +1788,7 @@
       "poisson_home_win_prob": 0.0865,
       "lightgbm_home_win_prob": 0.0084,
       "llm_correction": -0.03,
-      "llm_narrative": "England enters as the stronger side on paper, with a higher Elo rating and unbeaten tournament form, while Norway's attack is heavily dependent on Erling Haaland. England's disciplined defense and counter-attacking threat, led by Kane, create a tactical mismatch that favors the away team in this quarter-final.",
+      "llm_narrative": "England enters as the stronger side with a higher Elo rating and unbeaten tournament record, while Norway's high-scoring attack led by Haaland faces a disciplined English defense. The tactical matchup slightly favors England due to their ability to control possession and counter Norway's aggressive style, though Norway's home advantage and knockout momentum keep the contest competitive.",
       "model_version": "1.0.0"
     },
     {
@@ -1804,7 +1804,7 @@
       "poisson_home_win_prob": 0.0865,
       "lightgbm_home_win_prob": 0.7923,
       "llm_correction": 0.03,
-      "llm_narrative": "Argentina's relentless attacking style, led by Messi's playmaking, should break down Switzerland's organized but less dynamic defense. Switzerland's counter-attacking threat is limited by Argentina's high press and tournament form, giving the home side a clear tactical edge.",
+      "llm_narrative": "Argentina's fluid attacking system, led by Messi's playmaking, should overwhelm Switzerland's compact defense, which has been vulnerable to quick transitions. Switzerland's reliance on set pieces and counters may be stifled by Argentina's high press and midfield control, giving the home side a clear tactical edge in this quarter-final.",
       "model_version": "1.0.0"
     }
   ],
@@ -1812,91 +1812,91 @@
     {
       "team_id": "BEL",
       "team_name": "Belgium",
-      "champion_prob": 0.2068,
-      "final_prob": 0.4338,
-      "semi_final_prob": 0.4338,
+      "champion_prob": 0.209,
+      "final_prob": 0.4312,
+      "semi_final_prob": 0.4312,
       "quarter_final_prob": 1.0,
       "round_of_16_prob": 1.0,
-      "avg_goals_scored": 65.0338491295938,
-      "avg_goals_conceded": 31.502901353965182
+      "avg_goals_scored": 64.28803827751196,
+      "avg_goals_conceded": 31.1933014354067
     },
     {
       "team_id": "FRA",
       "team_name": "France",
-      "champion_prob": 0.2046,
-      "final_prob": 0.3748,
-      "semi_final_prob": 0.3748,
+      "champion_prob": 0.1984,
+      "final_prob": 0.3722,
+      "semi_final_prob": 0.3722,
       "quarter_final_prob": 1.0,
       "round_of_16_prob": 1.0,
-      "avg_goals_scored": 89.24926686217009,
-      "avg_goals_conceded": 25.957966764418376
+      "avg_goals_scored": 92.04233870967742,
+      "avg_goals_conceded": 26.79032258064516
     },
     {
       "team_id": "ARG",
       "team_name": "Argentina",
-      "champion_prob": 0.1536,
-      "final_prob": 0.335,
-      "semi_final_prob": 0.335,
+      "champion_prob": 0.1562,
+      "final_prob": 0.3412,
+      "semi_final_prob": 0.3412,
       "quarter_final_prob": 1.0,
       "round_of_16_prob": 1.0,
-      "avg_goals_scored": 77.38671875,
-      "avg_goals_conceded": 48.265625
+      "avg_goals_scored": 76.145966709347,
+      "avg_goals_conceded": 47.51088348271447
     },
     {
       "team_id": "NOR",
       "team_name": "Norway",
-      "champion_prob": 0.1392,
-      "final_prob": 0.2598,
-      "semi_final_prob": 0.2598,
+      "champion_prob": 0.139,
+      "final_prob": 0.259,
+      "semi_final_prob": 0.259,
       "quarter_final_prob": 1.0,
       "round_of_16_prob": 1.0,
-      "avg_goals_scored": 88.13793103448276,
-      "avg_goals_conceded": 52.3117816091954
+      "avg_goals_scored": 88.2978417266187,
+      "avg_goals_conceded": 52.375539568345324
     },
     {
       "team_id": "ENG",
       "team_name": "England",
-      "champion_prob": 0.1084,
-      "final_prob": 0.2038,
-      "semi_final_prob": 0.2038,
+      "champion_prob": 0.1098,
+      "final_prob": 0.2094,
+      "semi_final_prob": 0.2094,
       "quarter_final_prob": 1.0,
       "round_of_16_prob": 1.0,
-      "avg_goals_scored": 111.3450184501845,
-      "avg_goals_conceded": 56.93911439114391
+      "avg_goals_scored": 109.95264116575592,
+      "avg_goals_conceded": 56.333333333333336
     },
     {
       "team_id": "MAR",
       "team_name": "Morocco",
-      "champion_prob": 0.086,
-      "final_prob": 0.1616,
-      "semi_final_prob": 0.1616,
+      "champion_prob": 0.0842,
+      "final_prob": 0.1594,
+      "semi_final_prob": 0.1594,
       "quarter_final_prob": 1.0,
       "round_of_16_prob": 1.0,
-      "avg_goals_scored": 150.17209302325583,
-      "avg_goals_conceded": 65.04651162790698
+      "avg_goals_scored": 153.4228028503563,
+      "avg_goals_conceded": 66.36817102137768
     },
     {
       "team_id": "ESP",
       "team_name": "Spain",
-      "champion_prob": 0.0516,
-      "final_prob": 0.111,
-      "semi_final_prob": 0.111,
+      "champion_prob": 0.0544,
+      "final_prob": 0.1122,
+      "semi_final_prob": 0.1122,
       "quarter_final_prob": 1.0,
       "round_of_16_prob": 1.0,
-      "avg_goals_scored": 150.3875968992248,
-      "avg_goals_conceded": 128.35271317829458
+      "avg_goals_scored": 142.87132352941177,
+      "avg_goals_conceded": 121.75367647058823
     },
     {
       "team_id": "SUI",
       "team_name": "Switzerland",
-      "champion_prob": 0.0498,
-      "final_prob": 0.1202,
-      "semi_final_prob": 0.1202,
+      "champion_prob": 0.049,
+      "final_prob": 0.1154,
+      "semi_final_prob": 0.1154,
       "quarter_final_prob": 1.0,
       "round_of_16_prob": 1.0,
-      "avg_goals_scored": 235.33333333333334,
-      "avg_goals_conceded": 148.9678714859438
+      "avg_goals_scored": 239.08979591836734,
+      "avg_goals_conceded": 151.23265306122448
     }
   ],
-  "llm_narrative": "The statistical model paints a fascinating picture of the 2026 World Cup, with Belgium and France locked in a virtual dead heat for favorite status. Belgium’s 20.7% championship probability, coupled with a 43.4% chance of reaching the final, underscores the golden generation’s final push. Their path is intriguing: a quarterfinal against Spain is projected as a near-certain draw (65.0%), suggesting a tense, tactical battle that could go to penalties. If Belgium navigates that, their semifinal odds suggest they’d be well-positioned to leverage their deep midfield and Kevin De Bruyne’s experience. However, the model’s flat semifinal and final probabilities (both 43.4%) hint that their toughest test may come against Spain, not later opponents.\n\nThe true shockwave in these projections is Norway, sitting at 13.9% to win the whole thing—a dark horse that could redefine the tournament. Their quarterfinal against England is a stunner: the model gives Norway just a 7.0% home win probability but a staggering 68.5% away win for England. Wait—that’s reversed. Actually, the data shows England as the away team with 68.5% win probability, meaning Norway is a massive underdog at home. Yet the model still gives Norway a 26.0% chance of reaching the semifinal, implying that if they somehow upset England, their path opens wide. This is the classic “giant-killer” scenario: Erling Haaland’s Norway could be the tournament’s disruptor, relying on set pieces and counter-attacks to topple favorites.\n\nThe key determinant of the champion lies in the quarterfinal margins. Argentina’s 62.7% home win probability against Switzerland makes them the most comfortable favorite of the round, setting up a potential semifinal clash with either France or Morocco. France’s quarterfinal against Morocco is deceptively tight—a 47.0% win vs. 46.7% draw—suggesting that Kylian Mbappé’s brilliance may be needed to break down a disciplined Moroccan defense. The model’s low away win probabilities across the board (Morocco at 6.2%, Spain at 9.9%, Switzerland at 13.4%) indicate that home advantage is amplified this cycle, possibly due to North American conditions or crowd dynamics.\n\nCompared to previous World Cups, this 2026 edition feels historically open. In 2018 and 2022, the favorites (France, Argentina) had clearer paths, but here Belgium and France share near-identical odds, and a nation like Norway—never a past champion—is seriously in the mix. The model’s heavy draw probabilities (65.0% for Spain-Belgium, 46.7% for France-Morocco) suggest a tournament where knockout rounds are decided by fine margins, set pieces, and mental fortitude. If the final comes down to Belgium vs. Argentina, it would mirror the 2022 final’s tension; if Norway crashes the party, it would be the most stunning upset since Greece in 2004. The 2026 World Cup is shaping up to be a chess match where the favorites have no room for error."
+  "llm_narrative": "Based on the latest statistical model projections, the 2026 World Cup quarterfinal stage reveals a fascinating and slightly unconventional hierarchy. At the top sits Belgium, with a championship probability of 20.9%, edging out traditional powerhouse France. The model’s confidence in Belgium is striking, particularly given their massive 43.1% chance of reaching the final. This suggests the \"Golden Generation\" 2.0—likely led by the creative genius of Kevin De Bruyne and a resurgent Romelu Lukaku—has finally found the tactical balance and defensive solidity that eluded them in previous tournaments. Their path is also intriguing: a quarterfinal against Spain, where the model predicts a 66% chance of a draw, implying a tight, tactical battle that could suit Belgium’s counter-attacking prowess.\n\nThe most compelling dark horse is undoubtedly Norway. With a 13.9% chance to win the whole thing, Erling Haaland and company have emerged as a legitimate threat. The model’s quarterfinal projection is staggering: Norway faces England as the away team, yet they hold a massive 68.5% win probability. This is a seismic shift in the traditional power balance and suggests that Norway’s system, built around Haaland’s relentless finishing and Martin Ødegaard’s midfield orchestration, is perfectly suited to break down England’s defense. If Norway can dispatch the Three Lions, their path to the final becomes wide open, making them the ultimate wildcard.\n\nThe key factors that will determine the champion likely revolve around midfield control and penalty shootout resilience. Notice that three of the four quarterfinal matches have high draw probabilities (France-Morocco: 46.7%, Spain-Belgium: 66%, Argentina-Switzerland: 23.9%). This indicates a tournament where defensive organization is king and matches are decided by fine margins. The team that can best manage the emotional and physical toll of extra time—and convert from the spot—will have a massive advantage. France’s path, facing a resilient Morocco side, is a classic trap game; a slip here could derail their 19.8% title chance.\n\nCompared to previous World Cups, this 2026 tournament feels like a transition point. The dominance of South American teams is notably absent, with Argentina (15.6%) as the lone standard-bearer. The rise of Norway and the persistent strength of Belgium signal a shift toward European tactical evolution, where data-driven preparation and generational talent clusters are reshaping the map. Unlike the 2018 and 2022 tournaments, which were defined by a single dominant force (France, then Argentina), this edition feels wide open. The model suggests we are heading for a final where the winner will be the team that best blends star power with an unbreakable defensive structure—a recipe that currently favors Belgium, but leaves the door ajar for a Norwegian fairy tale."
 }
