@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/worldCup/',
   build: {
-    outDir: 'dist',
+    outDir: '../docs',
     assetsDir: 'assets',
   },
 })
