@@ -57,15 +57,19 @@ class MonteCarloEngine:
             if champion:
                 champion_counts[champion] += 1
 
-            # Finalists = teams in FINAL_1
-            # (simplified — every team in SF winner list made the final)
+            # SF winners → made the final (both teams)
             sf_winners = []
             for key, winner in state.knockout_winners.items():
                 if key.startswith("SF_"):
                     sf_winners.append(winner)
                     semi_final_counts[winner] += 1
 
-            # SF losers made semi-final too
+            # Both SF winners are finalists
+            for w in sf_winners:
+                final_counts[w] += 1
+
+            # QF winners → made semi-final (already tracked above)
+            # Also count QF participants as quarter-finalists
             for key, winner in state.knockout_winners.items():
                 if key.startswith("QF_"):
                     quarter_final_counts[winner] += 1

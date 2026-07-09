@@ -15,7 +15,7 @@ This project predicts the **2026 FIFA World Cup** champion using a multi-agent A
 
 ## Live Demo
 
-https://YOUR_USERNAME.github.io/worldCup/
+https://LanKnight.github.io/worldCup/
 
 ## Architecture
 

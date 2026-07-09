@@ -351,8 +351,8 @@ for i in range(5000):
 
 ## 项目链接
 
-- **GitHub仓库**：https://github.com/YOUR_USERNAME/worldCup
-- **在线演示**：https://YOUR_USERNAME.github.io/worldCup/
+- **GitHub仓库**：https://github.com/LanKnight/worldCup
+- **在线演示**：https://LanKnight.github.io/worldCup/
 - **技术栈**：Python + FastAPI + LightGBM + **DeepSeek API** + React + TypeScript + GitHub Pages
 
 ---

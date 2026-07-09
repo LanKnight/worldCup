@@ -69,15 +69,16 @@ class SimulationAgent(BaseAgent):
 
             team_name = teams.get(team_id, {}).get("name", team_id)
             n = results["total_iterations"]
+            from ..data.constants import ALIVE_TEAMS
 
             pred = {
                 "team_id": team_id,
                 "team_name": team_name,
-                "champion_prob": count / n,
-                "final_prob": final_count / n,
-                "semi_final_prob": semi_count / n,
-                "quarter_final_prob": qf_count / n,
-                "round_of_16_prob": r16_count / n,
+                "champion_prob": min(count / n, 1.0),
+                "final_prob": min(final_count / n, 1.0),
+                "semi_final_prob": min(semi_count / n, 1.0),
+                "quarter_final_prob": 1.0 if team_id in ALIVE_TEAMS else min(qf_count / n, 1.0),
+                "round_of_16_prob": min(r16_count / n, 1.0),
                 "avg_goals_scored": results["team_goals_scored"].get(team_id, 0) / max(count, 1),
                 "avg_goals_conceded": results["team_goals_conceded"].get(team_id, 0) / max(count, 1),
                 "model_version": "1.0.0",
